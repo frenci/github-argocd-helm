@@ -40,9 +40,9 @@ ingress:
   annotations:
     kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
-  # hosts:
-  #   - host: cmcloudlab760.info
-  #     paths: /
+  hosts:
+   - host: cmcloudlab760.info
+     paths: /
   # tls: []
   # #  - secretName: chart-example-tls
   # #    hosts:
