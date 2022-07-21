@@ -40,6 +40,8 @@ ingress:
   annotations:
     kubernetes.io/ingress.class: alb
     alb.ingress.kubernetes.io/scheme: internal
+  hosts:
+   - host: cmcloudlab760.info
   paths:
     - path: /*
       backend:
