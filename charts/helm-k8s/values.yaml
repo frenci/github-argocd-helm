@@ -42,11 +42,11 @@ ingress:
     alb.ingress.kubernetes.io/scheme: internal
   hosts:
    - host: cmcloudlab760.info
-  paths:
-    - path: /*
-      backend:
-        serviceName: app-demo
-        servicePort: 80
+     paths:
+       - path: /*
+         backend:
+           serviceName: app-demo
+           servicePort: 80
   # tls: []
   # #  - secretName: chart-example-tls
   # #    hosts:
