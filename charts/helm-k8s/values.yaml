@@ -38,11 +38,13 @@ service:
 ingress:
   enabled: true
   annotations:
-    kubernetes.io/ingress.class: nginx
-    # kubernetes.io/tls-acme: "true"
-  hosts:
-   - host: cmcloudlab760.info
-     paths: /
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internal
+  paths:
+    - path: /*
+      backend:
+        serviceName: app-demo
+        servicePort: 80
   # tls: []
   # #  - secretName: chart-example-tls
   # #    hosts:
