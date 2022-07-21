@@ -42,7 +42,7 @@ ingress:
     kubernetes.io/tls-acme: "true"
   hosts:
     - host: cmcloudlab760.info
-      paths: */
+      paths:
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
