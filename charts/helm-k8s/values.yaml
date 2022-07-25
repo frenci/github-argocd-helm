@@ -43,8 +43,8 @@ ingress:
   hosts: 
     - host: cmcloudlab1775.info
       paths:
-        - path: /*
-          pathType: ImplementationSpecific
+        - path: /
+          pathType: Prefix
   tls:
     - secretName: cmcloudlab1775.info
       hosts:

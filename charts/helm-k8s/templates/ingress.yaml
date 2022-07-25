@@ -32,8 +32,8 @@ spec:
       http:
         paths:
         {{- range .paths }}
-          - pathType: ImplementationSpecific
-            path: /*
+          - pathType: Prefix
+            path: /
             backend:
               service:
                 name: {{ $fullName }}
