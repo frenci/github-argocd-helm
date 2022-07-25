@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   pullPolicy: IfNotPresent
-  repository: 818474851473.dkr.ecr.us-east-1.amazonaws.com/gitops-argocd
+  repository: 454728591671.dkr.ecr.us-east-1.amazonaws.com/gitops-argocd
   version: main-a580e0e
 
 imagePullSecrets: []
@@ -39,16 +39,22 @@ ingress:
   enabled: true
   annotations:
     kubernetes.io/ingress.class: nginx
-    kubernetes.io/tls-acme: "true"
+#    kubernetes.io/tls-acme: "true"
   hosts: 
+  http:
     - host: cmcloudlab1775.info
       paths:
         - path: /
           pathType: Prefix
-  tls:
-    - secretName: cmcloudlab1775.info
-      hosts:
-        - cmcloudlab1775.info
+          backend:
+            service:
+              name: app-demo
+              port:
+                number: 80
+  tls: []
+#    - secretName: cmcloudlab1775.info
+#      hosts:
+#        - cmcloudlab1775.info
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
