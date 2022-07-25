@@ -32,7 +32,7 @@ spec:
       http:
         paths:
         {{- range .paths }}
-          - pathType: Prefix
+          - pathType: ImplementationSpecific
             path: /*
             backend:
               service:
