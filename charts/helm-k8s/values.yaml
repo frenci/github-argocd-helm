@@ -32,11 +32,11 @@ securityContext: {}
   # runAsUser: 1000
 
 service:
-  type: NodePort #try with 'LoadBalancer'
+  type: LoadBalancer #try with 'LoadBalancer'
   port: 80
 
 ingress:
-  enabled: true 
+  enabled: false 
   className: ""
   annotations:
     kubernetes.io/ingress.class: nginx
