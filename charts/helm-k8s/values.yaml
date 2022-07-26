@@ -44,7 +44,7 @@ ingress:
   hosts:
     - host: cmcloudlab644.info
       paths:
-        - path: /
+        - path: /*
           pathType: ImplementationSpecific
   tls:
     - secretName: cmcloudlab644.info
