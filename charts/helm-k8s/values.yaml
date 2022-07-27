@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   pullPolicy: IfNotPresent
-  repository: 105360013410.dkr.ecr.us-east-1.amazonaws.com/gitops-argocd
+  repository: 688504933740.dkr.ecr.us-east-1.amazonaws.com/gitops-argocd
   version: main-a580e0e
 
 imagePullSecrets: []
@@ -46,7 +46,7 @@ ingress:
       paths:
         - path: /
           pathType: ImplementationSpecific
-          backend:
+          
   tls: []
     # - secretName: cmcloudlab644.info
     #   hosts:
