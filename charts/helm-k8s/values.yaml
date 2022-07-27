@@ -41,11 +41,11 @@ ingress:
   annotations:
     kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
-  hosts:
-    - host: cmcloudlab615.info
-      paths:
-        - path: /*
-          pathType: Prefix
+  hosts: []
+    # - host: cmcloudlab615.info
+  paths:
+    - path: /nginx
+      pathType: ImplementationSpecific
           
   tls: []
     # - secretName: cmcloudlab644.info
