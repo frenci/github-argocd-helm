@@ -66,24 +66,12 @@ resources: {}
   #   cpu: 100m
   #   memory: 128Mi
 
-# autoscaling: 
+autoscaling: {}
 #   enabled: true
 #   minReplicas: 1
 #   maxReplicas: 5
 #   targetCPUUtilizationPercentage: 80
 #   targetMemoryUtilizationPercentage: 80
-
-autoscaling:
-    # -- Enable Horizontal Pod Autoscaler ([HPA]) for the Argo CD server
-   enabled: false
-    # -- Minimum number of replicas for the Argo CD server [HPA]
-   minReplicas: 1
-    # -- Maximum number of replicas for the Argo CD server [HPA]
-   maxReplicas: 5
-    # -- Average CPU utilization percentage for the Argo CD server [HPA]
-   targetCPUUtilizationPercentage: 50
-    # -- Average memory utilization percentage for the Argo CD server [HPA]
-   targetMemoryUtilizationPercentage: 50
 
 nodeSelector: {}
 
