@@ -35,7 +35,8 @@ service:
   type: LoadBalancer
   # The other accepted value is 'LoadBalancer'
   annotations:
-    service.beta.kubernetes.io/aws-load-balancer-subnets: "subnet-0e8b85821a1b71153, subnet-0e003d41c4497a525"
+    service.beta.kubernetes.io/aws-load-balancer-subnets: "subnet-0e8b85821a1b71153"
+
   port: 80
 
 ingress:
