@@ -34,16 +34,16 @@ securityContext: {}
 service:
   type: LoadBalancer
   # The other accepted value is 'LoadBalancer'
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-subnets: "subnet-0e8b85821a1b71153, subnet-0e003d41c4497a525"
   port: 80
 
 ingress:
-  enabled: true 
+  enabled: false 
   # If service type is 'LoadBalancer', the ingress should be disabled aka 'false'
   className: ""
   annotations:
-    service.beta.kubernetes.io/aws-load-balancer-subnets: 
-      - subnet-0e8b85821a1b71153
-      - subnet-0e003d41c4497a525
+    service.beta.kubernetes.io/aws-load-balancer-subnets: "subnet-0e8b85821a1b71153, subnet-0e003d41c4497a525"
     kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
