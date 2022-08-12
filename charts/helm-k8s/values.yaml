@@ -34,7 +34,7 @@ securityContext: {}
 service:
   type: LoadBalancer
   annotations:
-    service.beta.kubernetes.io/aws-load-balancer-subnets: subnet-0e8b85821a1b71153, subnet-0e003d41c4497a525
+    service.beta.kubernetes.io/aws-load-balancer-subnets: [subnet-0e8b85821a1b71153, subnet-0e003d41c4497a525]
   # The other accepted value is 'LoadBalancer'
   port: 80
 
