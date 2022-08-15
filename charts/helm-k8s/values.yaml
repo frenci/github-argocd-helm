@@ -34,12 +34,15 @@ securityContext: {}
 service:
   type: LoadBalancer
   # The other accepted value is 'LoadBalancer'
-  annotations:
+  # annotations:
   # kubernetes.io/ingress.class: alb
   # alb.ingress.kubernetes.io/scheme: internal
   # service.beta.kubernetes.io/aws-load-balancer-type: nlb
-    service.beta.kubernetes.io/aws-load-balancer-subnets: subnet-0e6f2ef68c98954eb
+  # service.beta.kubernetes.io/aws-load-balancer-subnets: subnet-0e6f2ef68c98954eb
   port: 80
+
+annotations:
+  service.beta.kubernetes.io/aws-load-balancer-subnets: "subnet-0e6f2ef68c98954eb"
 
 ingress:
   enabled: false 
