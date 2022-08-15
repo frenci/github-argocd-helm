@@ -38,7 +38,7 @@ service:
   # kubernetes.io/ingress.class: alb
   # alb.ingress.kubernetes.io/scheme: internal
   service.beta.kubernetes.io/aws-load-balancer-type: nlb
-  service.beta.kubernetes.io/aws-load-balancer-subnets: "subnet-0e8b85821a1b71153, subnet-0e003d41c4497a525"
+  service.beta.kubernetes.io/aws-load-balancer-subnets: "subnet-0a3640c50006b6fec"
   port: 80
 
 ingress:
