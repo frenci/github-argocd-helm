@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   pullPolicy: IfNotPresent
-  repository: 326854705786.dkr.ecr.us-east-1.amazonaws.com/gitops-argocd
+  repository: 616987080657.dkr.ecr.us-east-1.amazonaws.com/gitops-argocd
   version: main-a580e0e
 
 imagePullSecrets: []
@@ -42,7 +42,7 @@ service:
   port: 80
 
 annotations:
-  service.beta.kubernetes.io/aws-load-balancer-subnets: "subnet-03e8380a8ceefca52, subnet-09f967ea5456d87bd"
+  service.beta.kubernetes.io/aws-load-balancer-subnets: "subnet-09daf6c97884ef997, subnet-07d46d8d4097188db"
 
 ingress:
   enabled: false 
