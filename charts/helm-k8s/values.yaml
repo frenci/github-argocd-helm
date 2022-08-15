@@ -49,7 +49,7 @@ ingress:
     # kubernetes.io/ingress.class: alb
     # alb.ingress.kubernetes.io/scheme: internal
     # service.beta.kubernetes.io/aws-load-balancer-type: nlb
-    service.beta.kubernetes.io/aws-load-balancer-subnets: "subnet-0a3640c50006b6fec"
+    service.beta.kubernetes.io/aws-load-balancer-subnets: subnet-0e6f2ef68c98954eb
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
