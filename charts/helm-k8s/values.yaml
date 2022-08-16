@@ -36,7 +36,7 @@ service:
   type: LoadBalancer
 
   annotations:
-    service.beta.kubernetes.io/aws-load-balancer-subnets: "subnet-0a9d7e30f0252296a, subnet-0caa6a5a9945dcbb4"
+    service.beta.kubernetes.io/aws-load-balancer-subnets: "subnet-0c9f2f2c9ce16976f, subnet-05326030943023d04"
 
 # service:
 #   type: LoadBalancer 
