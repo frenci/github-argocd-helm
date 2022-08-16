@@ -32,11 +32,11 @@ securityContext: {}
   # runAsUser: 1000
 
 service:
-  annotations:
-    service.beta.kubernetes.io/aws-load-balancer-subnets: "subnet-0a9d7e30f0252296a, subnet-0caa6a5a9945dcbb4"
   port: 80
   type: LoadBalancer
 
+annotations:
+  service.beta.kubernetes.io/aws-load-balancer-subnets: "subnet-0a9d7e30f0252296a, subnet-0caa6a5a9945dcbb4"
 
 # service:
 #   type: LoadBalancer 
