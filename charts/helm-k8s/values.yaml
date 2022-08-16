@@ -33,22 +33,29 @@ securityContext: {}
 
 service:
   type: LoadBalancer 
-  # The other accepted value is 'LoadBalancer'
-  port: 80
-
-ingress:
-  enabled: true 
-  # If service type is 'LoadBalancer', the ingress should be disabled aka 'false'
-  className: ""
   annotations:
-    kubernetes.io/ingress.class: alb
-    alb.ingress.kubernetes.io/scheme: internal
     service.beta.kubernetes.io/aws-load-balancer-name: "k8s-nlb"
     service.beta.kubernetes.io/aws-load-balancer-backend-protocol: tcp
     service.beta.kubernetes.io/aws-load-balancer-type: "elb"
     service.beta.kubernetes.io/aws-load-balancer-internal: "true"
     service.beta.kubernetes.io/aws-load-balancer-scheme: "internal"
     service.beta.kubernetes.io/aws-load-balancer-subnets: "subnet-0a9d7e30f0252296a, subnet-0caa6a5a9945dcbb4"
+  # The other accepted value is 'LoadBalancer'
+  port: 80
+
+ingress:
+  enabled: false 
+  # If service type is 'LoadBalancer', the ingress should be disabled aka 'false'
+  className: ""
+  annotations: {}
+    # kubernetes.io/ingress.class: alb
+    # alb.ingress.kubernetes.io/scheme: internal
+    # service.beta.kubernetes.io/aws-load-balancer-name: "k8s-nlb"
+    # service.beta.kubernetes.io/aws-load-balancer-backend-protocol: tcp
+    # service.beta.kubernetes.io/aws-load-balancer-type: "elb"
+    # service.beta.kubernetes.io/aws-load-balancer-internal: "true"
+    # service.beta.kubernetes.io/aws-load-balancer-scheme: "internal"
+    # service.beta.kubernetes.io/aws-load-balancer-subnets: "subnet-0a9d7e30f0252296a, subnet-0caa6a5a9945dcbb4"
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
