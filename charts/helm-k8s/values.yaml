@@ -33,13 +33,10 @@ securityContext: {}
 
 service:
   type: LoadBalancer 
-  annotations:
-    service.beta.kubernetes.io/aws-load-balancer-name: "k8s-nlb"
-    service.beta.kubernetes.io/aws-load-balancer-backend-protocol: tcp
-    service.beta.kubernetes.io/aws-load-balancer-type: "elb"
-    service.beta.kubernetes.io/aws-load-balancer-internal: "true"
-    service.beta.kubernetes.io/aws-load-balancer-scheme: "internal"
-    service.beta.kubernetes.io/aws-load-balancer-subnets: "subnet-0a9d7e30f0252296a, subnet-0caa6a5a9945dcbb4"
+  internal:
+    enabled: true
+    annotations:
+      service.beta.kubernetes.io/aws-load-balancer-subnets: "subnet-0a9d7e30f0252296a, subnet-0caa6a5a9945dcbb4"
   # The other accepted value is 'LoadBalancer'
   port: 80
 
