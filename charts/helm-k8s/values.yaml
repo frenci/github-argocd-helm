@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   pullPolicy: IfNotPresent
-  repository: 616987080657.dkr.ecr.us-east-1.amazonaws.com/gitops-argocd
+  repository: 635389089424.dkr.ecr.us-east-1.amazonaws.com/gitops-argocd
   version: main-a580e0e
 
 imagePullSecrets: []
@@ -32,27 +32,20 @@ securityContext: {}
   # runAsUser: 1000
 
 service:
-  type: LoadBalancer
+  type: LoadBalancer 
   # The other accepted value is 'LoadBalancer'
-  # annotations:
-  # kubernetes.io/ingress.class: alb
-  # alb.ingress.kubernetes.io/scheme: internal
-  # service.beta.kubernetes.io/aws-load-balancer-type: nlb
-  # service.beta.kubernetes.io/aws-load-balancer-subnets: subnet-0e6f2ef68c98954eb
   port: 80
 
-annotations:
-  service.beta.kubernetes.io/aws-load-balancer-subnets: "subnet-09daf6c97884ef997, subnet-07d46d8d4097188db"
-
 ingress:
-  enabled: false 
+  enabled: true 
   # If service type is 'LoadBalancer', the ingress should be disabled aka 'false'
   className: ""
   annotations:
-    # kubernetes.io/ingress.class: alb
-    # alb.ingress.kubernetes.io/scheme: internal
-    # service.beta.kubernetes.io/aws-load-balancer-type: nlb
-    # service.beta.kubernetes.io/aws-load-balancer-subnets: subnet-0e6f2ef68c98954eb
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internal
+    service.beta.kubernetes.io/aws-load-balancer-type: "nlb"
+    service.beta.kubernetes.io/aws-load-balancer-internal: "true"
+    service.beta.kubernetes.io/aws-load-balancer-subnets: "subnet-0a9d7e30f0252296a, subnet-0caa6a5a9945dcbb4"
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
