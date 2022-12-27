@@ -42,7 +42,7 @@ service:
 
 ingress:
   enabled: true
-  className: ""
+  className: "alb"
   annotations:
     kubernetes.io/ingress.class: alb
     # kubernetes.io/ingress.class: nginx
@@ -50,7 +50,7 @@ ingress:
     alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:115177268320:certificate/cf001ea8-68ad-42ff-ba81-4ab10dfb6ca0
     alb.ingress.kubernetes.io/target-group-attributes: stickiness.enabled=true,stickiness.lb_cookie.duration_seconds=60
     alb.ingress.kubernetes.io/ssl-redirect: '443' 
-    alb.ingress.kubernetes.io/scheme: internal
+#     alb.ingress.kubernetes.io/scheme: internal
     # alb.ingress.kubernetes.io/target-type: ip    
     alb.ingress.kubernetes.io/target-type: instance
     alb.ingress.kubernetes.io/subnets: "subnet-0cff4d25fa00a970b, subnet-01dc1c678e6e16483, subnet-041eb32a915e0f9c3"
